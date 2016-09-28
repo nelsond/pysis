@@ -107,7 +107,7 @@ def test_header_has_magic_signature_at_beginning(random_image_array):
 
     size = struct.calcsize('ccccIII')
     values = struct.unpack('ccccIII' + ('x' * (256 - size) ), header)
-    expected_values = ('.', 'S', 'I', 'S', image.width, image.height, 2)
+    expected_values = (b'.', b'S', b'I', b'S', image.width, image.height, 2)
 
     assert(values == expected_values)
 
