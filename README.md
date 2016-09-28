@@ -4,7 +4,7 @@ Simple module for reading `.SIS` image files created by BECAnalyze.
 
 ## Requirements
 
-- `numpy` > 1.7
+- `numpy` >= 1.9
 
 ## Install
 
