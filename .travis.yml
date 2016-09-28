@@ -1,0 +1,17 @@
+language: python
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+env:
+  - NUMPY_VERSION=1.11.1
+  - NUMPY_VERSION=1.10.4
+  - NUMPY_VERSION=1.9.3
+  - NUMPY_VERSION=1.8.2
+  - NUMPY_VERSION=1.7.2
+install:
+  - "pip install numpy==$NUMPY_VERSION"
+  - "pip install -r requirements/dev.txt"
+script:
+  - "pip install -e ."
+  - "py.test -q --cov=sis tests/"
