@@ -1,4 +1,4 @@
-# pySIS
+# pySIS [![Build Status](https://travis-ci.org/nelsond/pysis.svg?branch=master)](https://travis-ci.org/nelsond/pysis)
 
 Simple module for reading `.SIS` image files created by BECAnalyze.
 
