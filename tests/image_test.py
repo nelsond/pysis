@@ -116,7 +116,7 @@ def test_to_buffer_returns_header_and_data(random_image_array):
     image = Image(random_image_array)
     buf = image.to_buffer()
 
-    expected_buf = image._header + random_image_array.ravel().tobytes()
+    expected_buf = image._header + random_image_array.T.ravel().tobytes()
 
     assert(buf == expected_buf)
 

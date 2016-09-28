@@ -60,7 +60,7 @@ class Image:
         return content + pad
 
     def to_buffer(self):
-        return self._header + self.data.ravel().tobytes()
+        return self._header + self.frames.T.ravel().tobytes()
 
     def save_to(self, path):
         with open(path, 'wb') as f:
@@ -79,7 +79,7 @@ class Image:
         width, height = klass._read_header(f)
 
         f.seek(klass.HEADER_SIZE)
-        data = np.fromfile(f, klass.PIXEL_DATA_TYPE)
+        data = np.fromfile(f, klass.PIXEL_DATA_TYPE).reshape(width, height).T
 
         return klass(data, width=width, height=height)
 
